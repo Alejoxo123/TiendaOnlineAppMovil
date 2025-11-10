@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/bg_form_container"
+    android:elevation="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Nombre del producto -->
+    <TextView
+        android:id="@+id/tvNombreProducto"
+        android:text="Nombre del producto"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorTextPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Descripción -->
+    <TextView
+        android:id="@+id/tvDescripcionProducto"
+        android:text="Descripción breve del producto..."
+        android:textSize="14sp"
+        android:textColor="@color/colorTextSecondary"
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Precio -->
+    <TextView
+        android:id="@+id/tvPrecioProducto"
+        android:text="$0"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Botones de acción -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Botón agregar -->
+        <Button
+            android:id="@+id/btnAgregarCarrito"
+            android:text="Agregar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@color/white"
+            android:layout_marginEnd="6dp" />
+
+        <!-- Botón editar -->
+        <Button
+            android:id="@+id/btnEditarProducto"
+            android:text="Editar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FFC107"
+            android:textColor="@color/white"
+            android:layout_marginEnd="6dp" />
+
+        <!-- Botón eliminar -->
+        <Button
+            android:id="@+id/btnEliminarProducto"
+            android:text="Eliminar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#F44336"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Tema principal modo claro -->
+    <style name="Theme.TiendaOnlineApp" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Colores -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@color/white</item>
+
+        <!-- Fondo general -->
+        <item name="android:windowBackground">@color/colorBackground</item>
+
+        <!-- Fuente -->
+        <item name="android:fontFamily">@font/poppins_regular</item>
+
+        <!-- Estilos personalizados -->
+        <item name="android:buttonStyle">@style/ModernButton</item>
+        <item name="android:textViewStyle">@style/ModernTextView</item>
+    </style>
+
+    <!-- Estilo de botones -->
+    <style name="ModernButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">12dp</item>   <!-- sin android: -->
+        <item name="android:padding">10dp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <!-- Estilo de TextViews -->
+    <style name="ModernTextView" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>
