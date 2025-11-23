@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <!-- Nombre del producto -->
+
     <TextView
         android:id="@+id/tvNombreProducto"
         android:text="Nombre del producto"
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!-- Descripción -->
+
     <TextView
         android:id="@+id/tvDescripcionProducto"
         android:text="Descripción breve del producto..."
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!-- Precio -->
+
     <TextView
         android:id="@+id/tvPrecioProducto"
         android:text="$0"
@@ -39,7 +39,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!-- Botones de acción -->
+
+    <ImageView
+        android:id="@+id/ivImagenProducto"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_image_placeholder" />
+
+
+
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="center_vertical"
@@ -47,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Botón agregar -->
+
         <Button
             android:id="@+id/btnAgregarCarrito"
             android:text="Agregar"
@@ -58,7 +68,7 @@
             android:textColor="@color/white"
             android:layout_marginEnd="6dp" />
 
-        <!-- Botón editar -->
+
         <Button
             android:id="@+id/btnEditarProducto"
             android:text="Editar"
@@ -69,7 +79,7 @@
             android:textColor="@color/white"
             android:layout_marginEnd="6dp" />
 
-        <!-- Botón eliminar -->
+
         <Button
             android:id="@+id/btnEliminarProducto"
             android:text="Eliminar"

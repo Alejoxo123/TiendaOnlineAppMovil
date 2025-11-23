@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Contenedor tipo tarjeta -->
+
     <LinearLayout
         android:orientation="vertical"
         android:background="@drawable/bg_form_container"
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <!-- Lista de productos -->
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -46,7 +46,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp" />
 
-        <!-- Total y botones -->
+
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center_vertical"

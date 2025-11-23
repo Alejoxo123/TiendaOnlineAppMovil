@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Contenedor del formulario -->
+
     <LinearLayout
         android:orientation="vertical"
         android:background="@drawable/bg_form_container"
@@ -43,6 +43,19 @@
             android:textColorHint="@color/colorTextSecondary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <EditText
+            android:id="@+id/etTelefono"
+            android:hint="Teléfono"
+            android:inputType="phone"
+            android:textColor="@color/colorTextPrimary"
+            android:textColorHint="@color/colorTextSecondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <View
             android:layout_width="match_parent"

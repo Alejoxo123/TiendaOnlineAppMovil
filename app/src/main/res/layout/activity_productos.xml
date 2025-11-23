@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Título de la pantalla -->
+
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="center_vertical"
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <!-- Botones de acciones generales -->
+
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="center_vertical"
@@ -46,7 +46,7 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-    <!-- Lista de productos con tarjetas -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProductos"
         android:layout_marginTop="16dp"

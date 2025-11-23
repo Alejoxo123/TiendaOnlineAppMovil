@@ -7,16 +7,19 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
+import com.example.tiendaonlineapp.data.local.AppDatabase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var dbHelper: DBHelper
+    private val db by lazy { AppDatabase.getInstance(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
-        dbHelper = DBHelper(this)
 
         val etCorreo = findViewById<EditText>(R.id.etCorreoLogin)
         val etContrasena = findViewById<EditText>(R.id.etContrasenaLogin)
@@ -33,27 +36,37 @@ class LoginActivity : AppCompatActivity() {
 
             if (correo.isEmpty() || contrasena.isEmpty()) {
                 Toast.makeText(this, "Ingrese correo y contraseña", Toast.LENGTH_SHORT).show()
-            } else {
-                val db = dbHelper.readableDatabase
-                val cursor = db.rawQuery(
-                    "SELECT id, nombre FROM clientes WHERE correo = ? AND contrasena = ?",
-                    arrayOf(correo, contrasena)
-                )
-                if (cursor.moveToFirst()) {
-                    val idCliente = cursor.getInt(0)
-                    val nombre = cursor.getString(1)
-                    cursor.close()
-                    db.close()
+                return@setOnClickListener
+            }
 
-                    val intent = Intent(this, ProfileActivity::class.java)
-                    intent.putExtra("NOMBRE_CLIENTE", nombre)
-                    intent.putExtra("ID_CLIENTE", idCliente)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    cursor.close()
-                    db.close()
-                    Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
+            lifecycleScope.launch(Dispatchers.IO) {
+                val cliente = db.clienteDao().login(correo, contrasena)
+
+                withContext(Dispatchers.Main) {
+                    if (cliente != null) {
+
+
+                        val prefs = getSharedPreferences("ShopPointPrefs", MODE_PRIVATE)
+                        prefs.edit()
+                            .putInt("ID_CLIENTE", cliente.id)
+                            .putString("NOMBRE_CLIENTE", cliente.nombre)
+                            .putString("CORREO_CLIENTE", cliente.correo)
+                            .apply()
+
+
+                        val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                        intent.putExtra("NOMBRE_CLIENTE", cliente.nombre)
+                        intent.putExtra("ID_CLIENTE", cliente.id)
+                        startActivity(intent)
+                        finish()
+
+                    } else {
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Credenciales incorrectas",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
             }
         }

@@ -7,7 +7,7 @@
 
     <EditText
         android:id="@+id/etNombreProductoDialog"
-        android:hint="Nombre producto"
+        android:hint="Nombre del producto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -23,6 +23,14 @@
         android:id="@+id/etDescripcionProductoDialog"
         android:hint="Descripción"
         android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Botón para tomar foto -->
+    <Button
+        android:id="@+id/btnTomarFotoProducto"
+        android:text="Tomar foto"
+        android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
